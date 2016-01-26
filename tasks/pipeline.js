@@ -17,14 +17,14 @@ var tmpPath = '.tmp/public/';
 //  to change `assets/styles/importer.less` instead.)
 var cssFilesToInject = [
   'styles/**/*.css',
-  'bower_components/bootstrap/dist/css/bootstrap.css'
+  'bower_components/**/**.min.css'
 ];
 
 
 // Client-side javascript files to inject in order
 // (uses Grunt-style wildcard/glob/splat expressions)
 var jsFilesToInject = [
-
+  'bower_components/angular/angular.min.js',
   // Load sails.io before everything else
   'js/dependencies/sails.io.js',
 
@@ -37,11 +37,7 @@ var jsFilesToInject = [
 
   // Use the "exclude" operator to ignore files
   // '!js/ignore/these/files/*.js'
-  '/bower_components/jquery/dist/jquery.js',
-  '/bower_components/angular/angular.js',
-  '/bower_components/angular-route/angular-route.js',
-  '/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
-  '/bower_components/bootstrap/dist/js/boostrap.js'
+  'bower_components/**/**.min.js',
 ];
 
 
