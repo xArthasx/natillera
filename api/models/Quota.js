@@ -6,9 +6,25 @@
 */
 
 module.exports = {
-
+  schema:true,
   attributes: {
-
+    lastDayOfPayment:{
+      type:'date',
+      required: true
+    },
+    paid:{
+      type:'boolean',
+      required:true,
+      defaultsTo:false
+    },
+    dateOfPayment:{
+      type:'date',
+      required:false,
+      defaultsTo:null
+    },
+    owner:{
+      model:'member'
+    }
   }
 };
 
