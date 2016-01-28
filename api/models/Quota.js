@@ -25,6 +25,25 @@ module.exports = {
     owner:{
       model:'member'
     }
+  },
+  findAllByMember:function(opts, cb){
+    var memberId = opts.member;
+    if(typeof memberId == 'object'){
+      memberId = member.id;
+    }
+    Member.findOne().where({id:memberId}).exec(function(err,member){
+      if(err) return cb(err);
+      if(!member){
+        err = new Error();
+        err.message = require('util').format('Cannot find quotas because member doesnt exist');
+        err.status = 404;
+        return cb(err);
+      }
+      Quota.find().populate('owner').where({owner:member.id}).exec(function(err, quotas){
+        if(err) return cb(err);
+        cb(err,quotas);
+      });
+    });
   }
 };
 

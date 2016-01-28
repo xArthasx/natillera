@@ -32,12 +32,10 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  '/': {
-    view: 'homepage'
-  },
-
-  'GET /quotas/:member/': 'QuotaController.retrieveAllByMember',
-  'GET /quotas/pay/:id/:dateOfPayment': 'QuotaController.pay'
+  '/': 'IndexController.index',
+  'POST /login':'UserController.login',
+  'GET /quotas/:member/?': 'QuotaController.retrieveAllByMember',
+  'POST /quotas/pay/?': 'QuotaController.pay'
 
   /***************************************************************************
   *                                                                          *
