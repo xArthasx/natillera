@@ -10,7 +10,16 @@
  */
 
 module.exports.bootstrap = function(cb) {
-
+  sails.on('lifted', function(){
+    var fs = require('fs');
+      fs.writeFileSync("/tmp/sailsStatus", "It's Sailing");
+      fs.unlinkSync("/tmp/sailsSunk");
+    });
+  sails.on('lower', function(){
+    var fs = require('fs');
+    fs.unlinkSync('/tmp/sailsStatus');
+    fs.writeFileSync("/tmp/sailsSunk", "It sank");
+  });
   // It's very important to trigger this callback method when you are finished
   // with the bootstrap!  (otherwise your server will never lift, since it's waiting on the bootstrap)
   cb();
