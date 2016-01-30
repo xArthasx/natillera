@@ -35,8 +35,10 @@ module.exports.routes = {
   '/': 'IndexController.index',
   'POST /login':'UserController.login',
   'GET /quotas/:member/?': 'QuotaController.retrieveAllByMember',
-  'POST /quotas/pay/?': 'QuotaController.pay'
-
+  'POST /quotas/pay/?': 'QuotaController.pay',
+  'POST /signUp/?': 'UserController.signUp',
+  'GET /member/create/?': 'views/member/create',
+  'POST member/create/?': 'MemberController.create',
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *

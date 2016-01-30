@@ -4,7 +4,7 @@
  * @description :: Server-side logic for managing users
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
-
+var create = require('sails/lib/hooks/blueprints/actions/create');
 module.exports = {
   login:function(req,res){
     return res.login({
@@ -24,6 +24,9 @@ module.exports = {
     // Otherwise if this is an HTML-wanting
     //browser, do a redirect.
     return res.redirect('/');
+  },
+  signUp:function(req,res){
+    create(req,res);
   }
 };
 
