@@ -8,11 +8,6 @@
 module.exports = {
   schema: true,
   attributes: {
-    id:{
-      type:'integer',
-      primaryKey:true,
-      autoincrement:true
-    },
     email:{
       type:'email',
       required:true,

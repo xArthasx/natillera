@@ -25,6 +25,7 @@ var cssFilesToInject = [
 // (uses Grunt-style wildcard/glob/splat expressions)
 var jsFilesToInject = [
   'bower_components/angular/angular.min.js',
+  'bower_components/angular-schema-form/dist/schema-form.min.js',
   // Load sails.io before everything else
   'js/dependencies/sails.io.js',
 
