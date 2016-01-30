@@ -1,1 +1,1 @@
-angular.module('natillera');
+angular.module('natillera',['schemaForm']);

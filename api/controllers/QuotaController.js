@@ -14,12 +14,26 @@ module.exports = {
     });
   },
   pay:function(req, res){
-    Quota
-      .update({id:req.param('id')},{paid:true,dateOfPayment: new Date(req.param('dateOfPayment'))})
-      .exec(function(err,quota){
-        if(err) return res.negotiate(err);
-        res.json({success:true});
-      });
+    Quota.findOne().where({id:req.param('quota')}).populate('owner').exec(function(err, quota){
+      if(err) return res.negotiate(err);
+      if(!quota){
+        return res.badRequest('Invalid quota');
+      }
+      console.log(quota);
+      var paidAmount = req.param('paidAmount') || quota.owner.quotaAmount;
+      Quota.update({id:req.param('quota')},{paid:true,dateOfPayment: new Date(), paidAmount:paidAmount})
+        .exec(function(err,quota){
+          if(err) return res.negotiate(err);
+          res.json({success:true});
+        });
+    });
+
+  },
+  retrieveOwedByMember:function(req,res){
+    var idMember = req.param('member');
+    Quota.findOwedByMember({member:idMember}, function(err, quotas){
+      if(err) return res.negotiate(err);
+      res.view('quotas/owedByMember', {quotas:quotas});
+    });
   }
 };
-

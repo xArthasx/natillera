@@ -24,6 +24,11 @@ module.exports = {
     },
     owner:{
       model:'member'
+    },
+    paidAmount:{
+      type: 'integer',
+      required:false,
+      defaultsTo:0
     }
   },
   findAllByMember:function(opts, cb){
@@ -44,6 +49,26 @@ module.exports = {
         cb(err,quotas);
       });
     });
+  },
+  findOwedByMember:function(opts, cb){
+    var memberId = opts.member;
+    if(typeof memberId == 'object'){
+      memberId = member.id;
+    }
+    Member.findOne().where({id:memberId}).exec(function(err,member){
+      if(err) return cb(err);
+      if(!member){
+        err = new Error();
+        err.message = require('util').format('Cannot find quotas because member doesnt exist');
+        err.status = 404;
+        return cb(err);
+      }
+      Quota.find().populate('owner').where({owner:member.id, paid:false}).exec(function(err, quotas){
+        if(err) return cb(err);
+        cb(err,quotas);
+      });
+    });
+
   }
 };
 
