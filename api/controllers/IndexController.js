@@ -8,9 +8,15 @@
 module.exports = {
   index: function (req, res) {
     Member.find().exec(function(err, members){
-      return res.view('index',{
-        members: members
-      });
+      Loan.find().populate('responsible').exec(function(err, loans){
+        Activity.find().exec(function(err, activities){
+          return res.view('index',{
+            members: members,
+            loans: loans,
+            activities: activities
+          });
+        })
+      })
     });
   }
 };
