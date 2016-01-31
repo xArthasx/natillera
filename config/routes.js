@@ -38,8 +38,13 @@ module.exports.routes = {
   'POST /quotas/pay/?': 'QuotaController.pay',
   'POST /signUp/?': 'UserController.signUp',
   'GET /member/create/?': 'views/member/create',
-  'POST member/create/?': 'MemberController.create',
+  'POST /member/create/?': 'MemberController.create',
   'GET /quotas/owed/:member/?': 'QuotaController.retrieveOwedByMember',
+  'GET /loan/create/?': 'views/loan/create',
+  'POST /loan/create/?': 'LoanController.create',
+  'GET /activity/create/?': 'views/activity/create',
+  'POST /activity/create/?': 'ActivityController.create',
+
 
   /***************************************************************************
   *                                                                          *

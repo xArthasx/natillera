@@ -6,9 +6,19 @@
 */
 
 module.exports = {
-
+  schema:true,
   attributes: {
-
+    name:{
+      type:'string',
+      required:true
+    },
+    lastDayOfPayment:{
+      type:'date',
+      required:true
+    },
+    members:{
+      collection:'member'
+    }
   }
 };
 

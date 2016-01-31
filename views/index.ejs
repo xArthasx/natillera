@@ -1,0 +1,18 @@
+<div class="container">
+  <h1>Natillera Maggy y Álvaro</h1>
+  <div>
+    <h3> Pago de cuotas </h3>
+    <ul>
+      <% for(var i = 0; i < members.length;i++){%>
+      <li><a href="/quotas/owed/<%= members[i].id%>">Agregar pago a <%= members[i].name %></a></li>
+      <%}%>
+    </ul>
+    <div>
+      <h3>Pago de prestamos </h3>
+
+    </div>
+    <div>
+      <h3>Pago de actividades </h3>
+    </div>
+  </div>
+</div>
