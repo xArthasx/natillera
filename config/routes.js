@@ -39,6 +39,8 @@ module.exports.routes = {
   'POST /signUp/?': 'UserController.signUp',
   'GET /member/create/?': 'views/member/create',
   'POST member/create/?': 'MemberController.create',
+  'GET /quotas/owed/:member/?': 'QuotaController.retrieveOwedByMember',
+
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *

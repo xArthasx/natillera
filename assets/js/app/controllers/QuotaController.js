@@ -14,7 +14,7 @@ angular.module('natillera').controller('QuotaController', ['$scope', '$http', '$
         title:'Mes de la cuota',
         type: 'string'
       },
-      paidAmount:{
+      fine:{
         title:'Total pago realizado (vacío cuando no se cobran intereses de mora)',
         type: 'number'
       }
@@ -28,7 +28,7 @@ angular.module('natillera').controller('QuotaController', ['$scope', '$http', '$
       required: true
     },
     {
-      key:'paidAmount',
+      key:'fine',
     },
     {
       type:'submit',

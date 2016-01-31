@@ -25,14 +25,17 @@ var cssFilesToInject = [
 // (uses Grunt-style wildcard/glob/splat expressions)
 var jsFilesToInject = [
   'bower_components/angular/angular.min.js',
-  'bower_components/angular-schema-form/dist/schema-form.min.js',
+  'bower_components/objectpath/lib/ObjectPath.js',
+  '/bower_components/jquery/dist/jquery.min.js',
+  'bower_components/tv4/tv4.js',
+  'bower_components/angular-schema-form/dist/schema-form.js',
   // Load sails.io before everything else
   'js/dependencies/sails.io.js',
 
   // Dependencies like jQuery, or Angular are brought in here
   'js/dependencies/**/*.js',
 
-  'bower_components/**/**.min.js',
+  'bower_components/**/**/*.min.js',
   // All of the rest of your client-side js files
   // will be injected here in no particular order.
   'js/**/*.js',

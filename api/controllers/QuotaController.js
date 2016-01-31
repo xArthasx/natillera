@@ -20,8 +20,8 @@ module.exports = {
         return res.badRequest('Invalid quota');
       }
       console.log(quota);
-      var paidAmount = req.param('paidAmount') || quota.owner.quotaAmount;
-      Quota.update({id:req.param('quota')},{paid:true,dateOfPayment: new Date(), paidAmount:paidAmount})
+      var fine = req.param('fine');
+      Quota.update({id:req.param('quota')},{paid:true,dateOfPayment: new Date(), fine:fine})
         .exec(function(err,quota){
           if(err) return res.negotiate(err);
           res.json({success:true});

@@ -1,12 +1,23 @@
 <div ng-controller="indexController">
+  <h3> Menú </h3>
 <div>
 <ul>
 <li><a href="/member/create">Crear miembro</a></li>
+<li><a href="/loan/create">Crear prestamo</a></li>
+<li><a href="/activity/create">Crear Actividad</a></li>
 </ul>
 </div>
+<h3> Pago de cuotas </h3>
 <ul>
   <% for(var i = 0; i < members.length;i++){%>
-    <li><a href="/quotas/<%= members[i].id%>">Agregar pago a <%= members[i].name %></a></li>
+    <li><a href="/quotas/owed/<%= members[i].id%>">Agregar pago a <%= members[i].name %></a></li>
   <%}%>
 </ul>
+</div>
+<div>
+<h3>Pago de prestamos </h3>
+
+</div>
+<div>
+<h3>Pago de actividades </h3>
 </div>

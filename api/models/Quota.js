@@ -25,7 +25,7 @@ module.exports = {
     owner:{
       model:'member'
     },
-    paidAmount:{
+    fine:{
       type: 'integer',
       required:false,
       defaultsTo:0
