@@ -15,7 +15,7 @@ angular.module('natillera').controller('QuotaController', ['$scope', '$http', '$
         type: 'string'
       },
       fine:{
-        title:'Total pago realizado (vacío cuando no se cobran intereses de mora)',
+        title:'Multa',
         type: 'number'
       }
     }
