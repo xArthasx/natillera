@@ -6,6 +6,12 @@
  */
 
 module.exports = {
-	
+	populateCreate:function(req, res){
+    Member.find().exec(function(err, members){
+        res.view('loan/create',{
+            members : members
+        })
+    });
+  },
 };
 
