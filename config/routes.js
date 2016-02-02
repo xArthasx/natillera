@@ -44,7 +44,8 @@ module.exports.routes = {
   'POST /loan/create/?': 'LoanController.create',
   'GET /activity/create/?': 'views/activity/create',
   'POST /activity/create/?': 'ActivityController.create',
-
+  'GET /payment/create/:loan/?': 'PaymentController.populatePayment',
+  'POST /payment/create/?': 'PaymentController.create',
 
   /***************************************************************************
   *                                                                          *

@@ -1,24 +1,22 @@
-<div class="container">
-  <h1>Natillera Maggy y Álvaro</h1>
-  <div>
-    <h3> Pago de cuotas </h3>
-    <ul>
-      <% for(var i = 0; i < members.length;i++){%>
-      <li><a href="/quotas/owed/<%= members[i].id%>">Agregar pago a <%= members[i].name %></a></li>
-      <%}%>
-    </ul>
-      <h3>Pago de prestamos </h3>
+<h1>Natillera Maggy y Álvaro</h1>
+<div>
+  <h3> Pago de cuotas </h3>
+  <ul>
+    <% for(var i = 0; i < members.length;i++){%>
+    <li><a href="/quotas/owed/<%= members[i].id%>">Agregar pago a <%= members[i].name %></a></li>
+    <%}%>
+  </ul>
+  <h3>Pago de prestamos </h3>
 
-    <ul>
-      <% for(var i = 0; i < loans.length;i++){%>
-      <li><a href="/loans/pay/<%= loans[i].id%>">Agregar pago al prestamo de <%= loans[i].responsible.name %></a></li>
-      <%}%>
-    </ul>
-      <h3>Pago de actividades </h3>
-    <ul>
-      <% for(var i = 0; i < activities.length;i++){%>
-      <li><a href="/activity/addPayment/<%= activities[i].id%>">Agregar pago a la actividad <%= activities[i].name %></a></li>
-      <%}%>
-    </ul>
-  </div>
+  <ul>
+    <% for(var i = 0; i < loans.length;i++){%>
+    <li><a href="/payment/create/<%= loans[i].id%>">Agregar pago al prestamo de <%= loans[i].responsible.name %></a></li>
+    <%}%>
+  </ul>
+  <h3>Pago de actividades </h3>
+  <ul>
+    <% for(var i = 0; i < activities.length;i++){%>
+    <li><a href="/activity/addPayment/<%= activities[i].id%>">Agregar pago a la actividad <%= activities[i].name %></a></li>
+    <%}%>
+  </ul>
 </div>

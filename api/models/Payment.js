@@ -1,5 +1,5 @@
 /**
-* Loan.js
+* Payment.js
 *
 * @description :: TODO: You might write a short summary of how this model works and what it represents here.
 * @docs        :: http://sailsjs.org/#!documentation/models
@@ -10,19 +10,16 @@ module.exports = {
   attributes: {
     amount:{
       type:'integer',
-      required: true
+      required:true
     },
-    responsible:{
-      model:'member',
-      required: true
+    tax:{
+      type:'integer',
+      required:true,
+      defaultsTo:0
     },
-    rate:{
-      type: 'integer',
-      enum: [5,10]
-    },
-    payments:{
-      collection:'payment',
-      via: 'loan'
+    loan:{
+      model:'loan',
+      required:true
     }
   }
 };
