@@ -27,6 +27,9 @@ angular.module('natillera').controller('PaymentController',['$scope', '$http', '
   angular.forEach(loan.payments, function(payment){
     amount -= (payment.amount - payment.tax)
   });
+  if(amount == tax){
+    amount = tax = 0;
+  }
   $scope.model = {loan:loan.id, tax:tax, amount:amount};
   $scope.onSubmit = function onSubmit(myForm){
     $scope.$broadcast('schemaFormValidate');
