@@ -23,6 +23,11 @@ module.exports = {
     payments:{
       collection:'payment',
       via: 'loan'
+    },
+    paid:{
+      type:'boolean',
+      required:true,
+      defaultsTo:false
     }
   }
 };

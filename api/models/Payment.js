@@ -21,6 +21,9 @@ module.exports = {
       model:'loan',
       required:true
     }
+  },
+  afterCreate:function(payment, cb){
+    Loan.update({id:payment.loan}, {paid:true}).exec(cb);
   }
 };
 
