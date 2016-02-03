@@ -1,0 +1,7 @@
+<script>
+  var members = <%- JSON.stringify(members)%>;
+  var activity = <%- JSON.stringify(activity)%>;
+</script>
+<div ng-controller="ActivityPayController">
+  <form name="myForm" sf-schema="schema" sf-form="form" sf-model="model" ng-submit="onSubmit(myForm)"></form>
+</div>

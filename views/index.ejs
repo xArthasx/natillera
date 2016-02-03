@@ -16,7 +16,7 @@
   <h3>Pago de actividades </h3>
   <ul>
     <% for(var i = 0; i < activities.length;i++){%>
-    <li><a href="/activity/addPayment/<%= activities[i].id%>">Agregar pago a la actividad <%= activities[i].name %></a></li>
+    <li><% if (!activities[i].paid){ %> <a href="/activity/<%= activities[i].id%>/pay"><%}%>Agregar pago a la actividad <%= activities[i].name %><% if (!activities[i].paid){ %></a><%}%></li>
     <%}%>
   </ul>
 </div>

@@ -17,6 +17,7 @@ angular.module('natillera').controller('ActivityController',['$scope','$http', f
       },
       lastDayOfPayment:{
         type:'string',
+        title:'Mes de la actividad',
         required:true,
       }
     }
