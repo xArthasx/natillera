@@ -1,3 +1,4 @@
+<h1>Tabla de cuotas</h1>
 <div class="table-responsive">
   <table class='table table-bordered'>
     <thead>
@@ -18,6 +19,7 @@
       </tr>
     </thead>
     <tbody>
+      <%var total = 0%>
       <%Object.keys(members).forEach(function (key) {
        var member = members[key];%>
       <tr>
@@ -27,9 +29,11 @@
         <td class='<%=quota.paid?quota.fine>0?"warning":"success":"danger"%>'><%=member.quotaAmount + quota.fine%></td>
         <%totalPaid+=!quota.paid?0:member.quotaAmount + quota.fine%>
         <%}%>
-        <td><%=totalPaid%></td>
+        <td><%=totalPaid %></td>
+        <%total+=totalPaid%>
       </tr>
       <%})%>
     </tbody>
   </table>
 </div>
+<h2>Total dinero aportado: $<%=total%></h2>
