@@ -1,0 +1,35 @@
+<div class="table-responsive">
+  <table class='table table-bordered'>
+    <thead>
+      <tr>
+        <th>Miembro</th>
+        <th>Enero</th>
+        <th>Febrero</th>
+        <th>Marzo</th>
+        <th>Abril</th>
+        <th>Mayo</th>
+        <th>Junio</th>
+        <th>Julio</th>
+        <th>Agosto</th>
+        <th>Septiembre</th>
+        <th>Octubre</th>
+        <th>Noviembre</th>
+        <th>Total Pagado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%Object.keys(members).forEach(function (key) {
+       var member = members[key];%>
+      <tr>
+        <td><%=member.name%></td>
+        <%var totalPaid = 0;%>
+        <%for(var i = 0 ; i < member.quotas.length;i++){ var quota = member.quotas[i] %>
+        <td class='<%=quota.paid?quota.fine>0?"warning":"success":"danger"%>'><%=member.quotaAmount + quota.fine%></td>
+        <%totalPaid+=!quota.paid?0:member.quotaAmount + quota.fine%>
+        <%}%>
+        <td><%=totalPaid%></td>
+      </tr>
+      <%})%>
+    </tbody>
+  </table>
+</div>
