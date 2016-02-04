@@ -28,9 +28,7 @@ var jsFilesToInject = [
   'bower_components/objectpath/lib/ObjectPath.js',
   '/bower_components/jquery/dist/jquery.min.js',
   'bower_components/tv4/tv4.js',
-  'bower_components/angular-schema-form/dist/schema-form.js',
-  // Load sails.io before everything else
-  'js/dependencies/sails.io.js',
+  'bower_components/angular-schema-form/dist/schema-form.min.js',
 
   // Dependencies like jQuery, or Angular are brought in here
   'js/dependencies/**/*.js',
