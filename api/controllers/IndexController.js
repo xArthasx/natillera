@@ -18,6 +18,12 @@ module.exports = {
         })
       })
     });
+  },
+  login: function(req, res){
+    res.view('login')
+  },
+  signUp: function(req, res){
+    res.view('signUp');
   }
 };
 

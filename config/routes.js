@@ -34,6 +34,8 @@ module.exports.routes = {
 
   '/': 'IndexController.index',
   'POST /login':'UserController.login',
+  'GET /login': 'IndexController.login',
+  'GET /signUp': 'IndexController.signUp',
   'GET /quotas/:member/?': 'QuotaController.retrieveAllByMember',
   'POST /quotas/pay/?': 'QuotaController.pay',
   'POST /signUp/?': 'UserController.signUp',

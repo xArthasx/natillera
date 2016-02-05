@@ -28,9 +28,12 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
+            <% if(req.session.authenticated){ %>
             <li><a href="/member/create">Crear miembro</a></li>
             <li><a href="/loan/create">Crear prestamo</a></li>
             <li><a href="/activity/create">Crear Actividad</a></li>
+            <li><a href="/data/data/">Estadística</a></li>
+            <%}%>
           </ul>
         </div>
       </div>
@@ -56,9 +59,11 @@
     <script src="/js/app/controllers/ActivityPayController.js"></script>
     <script src="/js/app/controllers/IndexController.js"></script>
     <script src="/js/app/controllers/LoanController.js"></script>
+    <script src="/js/app/controllers/LoginController.js"></script>
     <script src="/js/app/controllers/MemberController.js"></script>
     <script src="/js/app/controllers/PaymentController.js"></script>
     <script src="/js/app/controllers/QuotaController.js"></script>
+    <script src="/js/app/controllers/SignUpController.js"></script>
     <script src="/js/app/http.js"></script>
     <!--SCRIPTS END-->
   </body>

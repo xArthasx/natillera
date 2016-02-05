@@ -25,6 +25,10 @@ module.exports.policies = {
   * access)                                                                  *
   *                                                                          *
   ***************************************************************************/
+  IndexController:{
+    login: true,
+    signUp: true
+  },
   UserController:{
     login: true,
     signUp: true
